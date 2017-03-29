@@ -18,11 +18,11 @@ describe 'httpd::service' do
     end
 
     it 'enables the httpd service' do
-      expect(chef_run).to enable_service('httpd')
+      expect(chef_run).to enable_service(node['httpd']['service_name'])
     end
 
     it 'starts the httpd service' do
-      expect(chef_run).to start_service('httpd')
+      expect(chef_run).to start_service(node['httpd']['service_name'])
     end
 
   end
