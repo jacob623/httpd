@@ -21,5 +21,13 @@ describe 'httpd::default' do
       expect(chef_run).to include_recipe('httpd::install')
     end
 
+    it 'includes the configuration recipe' do
+      expect(chef_run).to include_recipe('httpd::configuration')
+    end
+
+    it 'includes the service recipe' do
+      expect(chef_run).to include_recipe('httpd::service')
+    end
+
   end
 end
