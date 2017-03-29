@@ -1,1 +1,1 @@
-default['httpd']['package_name'] = 'httpd'
+default['htpd']['package_name'] = 'httpd'
