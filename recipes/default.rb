@@ -3,6 +3,8 @@
 # Recipe:: default
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
+require pry
+bindiing.pry
 
 include_recipe 'httpd::install'
 include_recipe 'httpd::configuration'
