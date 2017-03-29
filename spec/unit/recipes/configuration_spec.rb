@@ -23,4 +23,5 @@ describe 'httpd::configuration' do
     end
 
   end
+end
 
