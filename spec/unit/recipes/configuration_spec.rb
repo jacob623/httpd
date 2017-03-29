@@ -8,9 +8,9 @@
 require 'spec_helper'
 
 describe 'httpd::configuration' do
-  context 'When all attributes are default, on CentOS' do
+  context 'When all attributes are default, on any platform' do
     let(:chef_run) do
-      runner = ChefSpec::ServerRunner.new(platform: 'centos', version: '6.7')
+      runner = ChefSpec::ServerRunner.new
       runner.converge(described_recipe)
     end
 
@@ -24,19 +24,3 @@ describe 'httpd::configuration' do
 
   end
 
-  context 'When all attributes are default, on Ubuntu' do
-    let(:chef_run) do
-      runner = ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '14.04')
-      runner.converge(described_recipe)
-    end
-
-    it 'converges successfully' do
-      expect { chef_run }.to_not raise_error
-    end
-
-    it 'index.html exists and content is correct' do
-      expect(chef_run).to render_file('/var/www/html/index.html').with_content(/Welcome Home/)
-    end
-
-  end
-end
