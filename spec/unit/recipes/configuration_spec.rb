@@ -16,5 +16,10 @@ describe 'httpd::configuration' do
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
+
+    it 'index.html exists and content is correct' do
+      expect(chef_run).to render_file('/var/www/html/index.html').with_content('Welcome Home!')
+    end
+
   end
 end
