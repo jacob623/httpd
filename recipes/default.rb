@@ -6,7 +6,5 @@
 
 include_recipe 'httpd::install'
 include_recipe 'httpd::configuration'
+include_recipe 'httpd::service'
 
-service 'httpd' do
-  action [:enable, :start]
-end
