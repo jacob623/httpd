@@ -18,7 +18,7 @@ describe 'httpd::configuration' do
     end
 
     it 'index.html exists and content is correct' do
-      expect(chef_run).to render_file('/var/www/html/index.html').with_content('Welcome Home!')
+      expect(chef_run).to render_file('/var/www/html/index.html').with_content(/Welcome Home/)
     end
 
   end
